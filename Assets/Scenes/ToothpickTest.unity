@@ -156,13 +156,11 @@ Prefab:
       propertyPath: m_Name
       value: Toothpick (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.x
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.z
       value: 3
       objectReference: {fileID: 0}
@@ -289,13 +287,11 @@ Prefab:
       propertyPath: m_Name
       value: Toothpick (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.x
       value: -3
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.z
       value: -3
       objectReference: {fileID: 0}
@@ -349,8 +345,7 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -70.95
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.z
       value: 3
       objectReference: {fileID: 0}
@@ -400,13 +395,11 @@ Prefab:
       propertyPath: m_Name
       value: Toothpick (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.x
       value: -3
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.z
       value: 3
       objectReference: {fileID: 0}
@@ -460,13 +453,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 7.28
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.x
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.z
       value: -3
       objectReference: {fileID: 0}
@@ -516,65 +507,12 @@ Prefab:
       propertyPath: m_Name
       value: Toothpick (11)
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.x
       value: -1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.z
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &977275364
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1139490252485992, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
-      propertyPath: m_Name
-      value: Toothpick (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.x
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -708,10 +646,71 @@ Prefab:
       propertyPath: m_Name
       value: Toothpick (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.z
       value: -3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &1468080279
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026822864819150, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139490252485992, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
+      propertyPath: m_Name
+      value: Toothpick (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ConnectedAnchor.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ConnectedAnchor.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fbb6a1cc579b0d4e8cbffebef02e507, type: 2}
@@ -759,13 +758,11 @@ Prefab:
       propertyPath: m_Name
       value: Toothpick (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.x
       value: -1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.z
       value: -3
       objectReference: {fileID: 0}
@@ -815,13 +812,11 @@ Prefab:
       propertyPath: m_Name
       value: Toothpick (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.x
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.z
       value: -3
       objectReference: {fileID: 0}
@@ -876,13 +871,11 @@ Prefab:
       propertyPath: m_Name
       value: Toothpick (14)
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.x
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.z
       value: 3
       objectReference: {fileID: 0}
@@ -974,13 +967,11 @@ Prefab:
       propertyPath: m_Name
       value: Toothpick (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_AutoConfigureConnectedAnchor
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.x
       value: 1.5
       objectReference: {fileID: 0}
@@ -1030,8 +1021,7 @@ Prefab:
       propertyPath: m_Name
       value: Toothpick (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.x
       value: -2.01
       objectReference: {fileID: 0}
@@ -1081,8 +1071,7 @@ Prefab:
       propertyPath: m_Name
       value: Toothpick (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 59402126124968810, guid: 7fbb6a1cc579b0d4e8cbffebef02e507,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_ConnectedAnchor.x
       value: -3
       objectReference: {fileID: 0}

@@ -6,15 +6,16 @@ public class InvisibleHand : MonoBehaviour {
 
     private SphereCollider col;
     private bool grabbing_pick;
-    private HingeJoint toothjoint;
+    private GameObject tp;
 
     public float plane_coord;
+    public float rotateSpeed;
 
 	// Use this for initialization
 	void Start () {
         col = this.gameObject.GetComponent<SphereCollider>();
         col.enabled = false;
-        toothjoint = null;
+        tp = null;
     }
 	
 	// Update is called once per frame
@@ -33,8 +34,7 @@ public class InvisibleHand : MonoBehaviour {
                 //grab the toothpick at that point
                 Debug.Log("touched a toothpick");
                 
-                toothjoint = hit.collider.gameObject.GetComponent<HingeJoint>();
-                toothjoint.connectedBody = this.gameObject.GetComponent<Rigidbody>();
+                tp = hit.collider.gameObject;
             }
             else
             {
@@ -45,11 +45,15 @@ public class InvisibleHand : MonoBehaviour {
         {
             col.enabled = false;
 
-            if (toothjoint)
+            if (tp)
             {
-                toothjoint.connectedBody = null;
-                toothjoint = null;
+                tp = null;
             }
+        }
+
+        if(tp && Input.GetMouseButton(0))
+        {
+            tp.transform.Rotate(new Vector3(0, 0, 0) * Time.deltaTime * rotateSpeed);
         }
     }
 }
