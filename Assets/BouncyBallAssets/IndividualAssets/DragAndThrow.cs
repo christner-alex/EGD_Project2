@@ -6,6 +6,7 @@ public class DragAndThrow : MonoBehaviour {
 
     public float plane_z_coord;
     public float max_drag_vel;
+    public string grab_tag;
 
     private GameObject grabbed_ball;
 
@@ -22,7 +23,7 @@ public class DragAndThrow : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag.Equals("BouncyBall"))
+            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag.Equals(grab_tag))
             {
                 grabbed_ball = hit.collider.gameObject;
             }

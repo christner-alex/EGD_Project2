@@ -4695,6 +4695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plane_z_coord: 0
   max_drag_vel: 15
+  grab_tag: BouncyBall
 --- !u!114 &114702655063498242
 MonoBehaviour:
   m_ObjectHideFlags: 1
