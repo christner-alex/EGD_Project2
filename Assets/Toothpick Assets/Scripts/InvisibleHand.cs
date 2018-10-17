@@ -21,8 +21,18 @@ public class InvisibleHand : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+       // Vector3 hover_pt = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
+        //transform.position = new Vector3(hover_pt.x, plane_coord, hover_pt.z); ;
+
         Vector3 hover_pt = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
-        transform.position = new Vector3(hover_pt.x, plane_coord, hover_pt.z); ;
+        hover_pt = new Vector3(hover_pt.x, plane_coord, hover_pt.z);
+        //print("hover pt: " + hover_pt);
+
+        Vector3 ball_pt_2d = new Vector3(transform.position.x, hover_pt.y, transform.position.z);
+        //print("ball_pt_2d: " + hover_pt);
+
+        Vector3 to_cursor = hover_pt - ball_pt_2d;
+        this.gameObject.GetComponent<Rigidbody>().velocity = to_cursor / Time.deltaTime;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -50,10 +60,9 @@ public class InvisibleHand : MonoBehaviour {
                 tp = null;
             }
         }
-
-        if(tp && Input.GetMouseButton(0))
+        else if(tp && Input.GetMouseButton(0))
         {
-            tp.transform.Rotate(new Vector3(0, 0, 0) * Time.deltaTime * rotateSpeed);
+            tp.transform.position = transform.position;
         }
     }
 }
