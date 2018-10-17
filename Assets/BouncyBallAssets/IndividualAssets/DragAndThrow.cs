@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DragAndThrow : MonoBehaviour {
 
-    public float plane_coord;
+    public float plane_z_coord;
     public float max_drag_vel;
 
     private GameObject grabbed_ball;
@@ -30,7 +30,7 @@ public class DragAndThrow : MonoBehaviour {
         else if(Input.GetMouseButton(0) && grabbed_ball)
         {
             Vector3 hover_pt = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -1 * Camera.main.transform.position.z));
-            hover_pt = new Vector3(hover_pt.x, hover_pt.y, plane_coord);
+            hover_pt = new Vector3(hover_pt.x, hover_pt.y, plane_z_coord);
             print("hover pt: " + hover_pt);
             
             Vector3 ball_pt_2d = new Vector3(grabbed_ball.transform.position.x, grabbed_ball.transform.position.y, hover_pt.z);
@@ -38,7 +38,8 @@ public class DragAndThrow : MonoBehaviour {
 
             Vector3 to_cursor = hover_pt - ball_pt_2d;
 
-            grabbed_ball.GetComponent<Rigidbody>().velocity = to_cursor / Time.deltaTime;
+            Vector3 vel = to_cursor / Time.deltaTime;
+            grabbed_ball.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(vel, max_drag_vel);
         }
         else if (!Input.GetMouseButton(0))
         {

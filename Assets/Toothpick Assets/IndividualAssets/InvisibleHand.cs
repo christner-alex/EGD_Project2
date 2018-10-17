@@ -8,8 +8,8 @@ public class InvisibleHand : MonoBehaviour {
     private bool grabbing_pick;
     private GameObject tp;
 
-    public float plane_coord;
-    public float rotateSpeed;
+    public float plane_y_coord;
+    public float max_drag_vel;
 
 	// Use this for initialization
 	void Start () {
@@ -25,14 +25,15 @@ public class InvisibleHand : MonoBehaviour {
         //transform.position = new Vector3(hover_pt.x, plane_coord, hover_pt.z); ;
 
         Vector3 hover_pt = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
-        hover_pt = new Vector3(hover_pt.x, plane_coord, hover_pt.z);
+        hover_pt = new Vector3(hover_pt.x, plane_y_coord, hover_pt.z);
         //print("hover pt: " + hover_pt);
 
         Vector3 ball_pt_2d = new Vector3(transform.position.x, hover_pt.y, transform.position.z);
         //print("ball_pt_2d: " + hover_pt);
 
         Vector3 ball_to_cursor = hover_pt - ball_pt_2d;
-        this.gameObject.GetComponent<Rigidbody>().velocity = ball_to_cursor / Time.deltaTime;
+        Vector3 hand_vel = ball_to_cursor / Time.deltaTime;
+        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(hand_vel, max_drag_vel);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -66,7 +67,8 @@ public class InvisibleHand : MonoBehaviour {
             Vector3 tp_pt_2d = new Vector3(tp.transform.position.x, hover_pt.y, tp.transform.position.z);
 
             Vector3 tp_to_cursor = hover_pt - tp_pt_2d;
-            tp.GetComponent<Rigidbody>().velocity = tp_to_cursor / Time.deltaTime;
+            Vector3 tpVel = tp_to_cursor / Time.deltaTime;
+            tp.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(tpVel, max_drag_vel);
         }
     }
 }
