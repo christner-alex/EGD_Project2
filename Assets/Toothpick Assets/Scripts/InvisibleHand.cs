@@ -31,8 +31,8 @@ public class InvisibleHand : MonoBehaviour {
         Vector3 ball_pt_2d = new Vector3(transform.position.x, hover_pt.y, transform.position.z);
         //print("ball_pt_2d: " + hover_pt);
 
-        Vector3 to_cursor = hover_pt - ball_pt_2d;
-        this.gameObject.GetComponent<Rigidbody>().velocity = to_cursor / Time.deltaTime;
+        Vector3 ball_to_cursor = hover_pt - ball_pt_2d;
+        this.gameObject.GetComponent<Rigidbody>().velocity = ball_to_cursor / Time.deltaTime;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -41,8 +41,7 @@ public class InvisibleHand : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag.Equals("Toothpick"))
             {
-                //grab the toothpick at that point
-                Debug.Log("touched a toothpick");
+                //Debug.Log("touched a toothpick");
                 
                 tp = hit.collider.gameObject;
             }
@@ -62,7 +61,12 @@ public class InvisibleHand : MonoBehaviour {
         }
         else if(tp && Input.GetMouseButton(0))
         {
-            tp.transform.position = transform.position;
+            //tp.transform.position = transform.position;
+
+            Vector3 tp_pt_2d = new Vector3(tp.transform.position.x, hover_pt.y, tp.transform.position.z);
+
+            Vector3 tp_to_cursor = hover_pt - tp_pt_2d;
+            tp.GetComponent<Rigidbody>().velocity = tp_to_cursor / Time.deltaTime;
         }
     }
 }
