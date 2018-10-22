@@ -1115,7 +1115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1189105650822050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.4071048, y: 1.5950388, z: -1.4339068}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4863984964292226}
@@ -4694,7 +4694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plane_z_coord: 0
-  max_drag_vel: 15
+  max_drag_vel: 50
   grab_tag: BouncyBall
 --- !u!114 &114702655063498242
 MonoBehaviour:
