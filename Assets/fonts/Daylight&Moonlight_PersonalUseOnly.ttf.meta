@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 901b11a4de9a92340aa270ccba42b93d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Daylight&Moonlight_PersonalUseOnly
+  fontNames:
+  - Daylight&Moonlight_PersonalUseOnly
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
