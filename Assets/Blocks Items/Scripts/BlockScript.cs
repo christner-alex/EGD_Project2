@@ -7,8 +7,8 @@ public class BlockScript : MonoBehaviour {
 	AudioSource aud;
 	Rigidbody rb;
 
-	float pitchRangeLow = .5f;
-	float pitchRangeHight = .8f;
+	public float pitchRangeLow = .5f;
+	public float pitchRangeHight = .8f;
 	float collisionThreshold = .01f;
 	float thresholdWeight = 5f;
 	float maxVol = .6f;
