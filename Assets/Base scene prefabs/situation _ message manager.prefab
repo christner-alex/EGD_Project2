@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1408627423149854}
+  m_IsPrefabAsset: 1
+--- !u!1 &1408627423149854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4293000640748588}
+  - component: {fileID: 114760899480882812}
+  m_Layer: 0
+  m_Name: situation _ message manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4293000640748588
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1408627423149854}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1820, y: 84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114760899480882812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1408627423149854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818a76b2435e8f2419bbd48c510b2440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  situations:
+  - {fileID: 1433949961473334, guid: e39255a4a468f964aa25926e31e951d5, type: 2}
+  - {fileID: 1351052057294996, guid: 96abf2791869c914e92f4e97f363c34a, type: 2}
+  messages:
+  - 'Take a deep breath. '
+  - "You\u2019ve got this!"
+  - 'The world cares about you. '
+  - 'Keep trying your best!  '
+  - 'Even though the world is difficult, you are still here. '
+  - 'Great job! '
+  - 'Have you been getting enough sleep? '
+  currentSituation: {fileID: 0}
+  currentSituationIndex: 0
+  messageObject: {fileID: 0}
+  currentMessage: 
+  currentMessageIndex: 0
+  transitionDuration: 1
+  transitionCurveOn:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.0031814575
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.54357374
+      value: 0.8906758
+      inSlope: 0.65159124
+      outSlope: 0.65159124
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.99681854
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  transitionCurveOff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.36907616
+      value: 0.07951782
+      inSlope: 0.563978
+      outSlope: 0.563978
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  cameraTransition:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  floorMessageColors:
+  - {r: 0.5707547, g: 0.9654427, b: 1, a: 1}
+  - {r: 0.4198113, g: 1, b: 0.66222465, a: 1}
+  - {r: 1, g: 0.6839622, b: 0.98668486, a: 1}
+  - {r: 1, g: 0.95916665, b: 0.51, a: 1}
+  floorSituationColor: {r: 1, g: 0.9263609, b: 0.759434, a: 1}
+  floor: {fileID: 0}
+  textColor: {r: 1, g: 1, b: 1, a: 0}
+  listOfWords: []
+  placesCameraGoForBlocks:
+  - {fileID: 0}
+  placesCameraGoForBouncyBall:
+  - {fileID: 0}
+  placesCameraGoForSeeSaw:
+  - {fileID: 0}
+  blockSituations:
+  - {fileID: 1433949961473334, guid: e39255a4a468f964aa25926e31e951d5, type: 2}
+  - {fileID: 1351052057294996, guid: 96abf2791869c914e92f4e97f363c34a, type: 2}
+  bouncyBallSituations:
+  - {fileID: 1764111562001548, guid: dde9463a955da4141a07b8afbd1c664b, type: 2}
+  seeSawSituations:
+  - {fileID: 1102514222088812, guid: e1ac22ec5461e1047aa7ad57b2c2247e, type: 2}
