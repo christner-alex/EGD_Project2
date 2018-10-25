@@ -173,6 +173,8 @@ MonoBehaviour:
   - {fileID: 0}
   placesCameraGoForSeeSaw:
   - {fileID: 0}
+  placesCameraGoForToothpick:
+  - {fileID: 0}
   blockSituations:
   - {fileID: 1433949961473334, guid: e39255a4a468f964aa25926e31e951d5, type: 2}
   - {fileID: 1351052057294996, guid: 96abf2791869c914e92f4e97f363c34a, type: 2}
@@ -180,3 +182,6 @@ MonoBehaviour:
   - {fileID: 1764111562001548, guid: dde9463a955da4141a07b8afbd1c664b, type: 2}
   seeSawSituations:
   - {fileID: 1102514222088812, guid: e1ac22ec5461e1047aa7ad57b2c2247e, type: 2}
+  toothPickSituations:
+  - {fileID: 1533420142673658, guid: 4190b766602d41c41809ed061dcd6274, type: 2}
+  startingCameraPosition: {fileID: 0}

@@ -25,25 +25,32 @@ public class SituationManager : MonoBehaviour {
     public List<Transform> placesCameraGoForBlocks;
     public List<Transform> placesCameraGoForBouncyBall;
     public List<Transform> placesCameraGoForSeeSaw;
+    public List<Transform> placesCameraGoForToothpick;
 
     public List<GameObject> blockSituations;
     public List<GameObject> bouncyBallSituations;
     public List<GameObject> seeSawSituations;
+    public List<GameObject> toothPickSituations;
 
     List<List<GameObject>> allSituations;
     List<List<Transform>> allCameras;
+    public Transform startingCameraPosition;
     // Use this for initialization
     void Start () {
+        Camera.main.transform.position = startingCameraPosition.position;
+        Camera.main.transform.rotation = startingCameraPosition.rotation;
 		listOfWords = new List<string>();
         allSituations = new List<List<GameObject>>();
         allCameras = new List<List<Transform>>();
         allSituations.Add(blockSituations);
         allSituations.Add(bouncyBallSituations);
         allSituations.Add(seeSawSituations);
+        allSituations.Add(toothPickSituations);
 
         allCameras.Add(placesCameraGoForBlocks);
         allCameras.Add(placesCameraGoForBouncyBall);
         allCameras.Add(placesCameraGoForSeeSaw);
+        allCameras.Add(placesCameraGoForToothpick);
 
     }
 
@@ -86,10 +93,12 @@ public class SituationManager : MonoBehaviour {
         float startTime = Time.time;
         Vector3 startPosition= Camera.main.transform.transform.position;
         Quaternion startRot= Camera.main.transform.transform.rotation;
-        while(Time.time-startTime<=1)
+        int randomCameraWithinSituation = Random.Range(0, allCameras[index].Count);
+        while (Time.time-startTime<=1)
         {
-            Camera.main.transform.transform.position = Vector3.Lerp(startPosition, allCameras[index][Random.Range(0, allCameras[index].Count)].position, cameraTransition.Evaluate((Time.time - startTime) /1));
-            Camera.main.transform.transform.rotation = Quaternion.Lerp(startRot, allCameras[index][Random.Range(0, allCameras[index].Count)].rotation, cameraTransition.Evaluate((Time.time - startTime) / 1));
+
+            Camera.main.transform.transform.position = Vector3.Lerp(startPosition, allCameras[index][randomCameraWithinSituation].position, cameraTransition.Evaluate((Time.time - startTime) /1));
+            Camera.main.transform.transform.rotation = Quaternion.Lerp(startRot, allCameras[index][randomCameraWithinSituation].rotation, cameraTransition.Evaluate((Time.time - startTime) / 1));
             yield return new WaitForEndOfFrame();
 
         }

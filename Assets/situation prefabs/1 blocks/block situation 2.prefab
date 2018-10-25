@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 135070222323421778}
   - component: {fileID: 54560355250846958}
   - component: {fileID: 136696761255464032}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: finger collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
