@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &276798343 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4576421198231736, guid: 09350297a7c352a4b8cc877b644e9e31,
+    type: 2}
+  m_PrefabInternal: {fileID: 1739869944}
 --- !u!1001 &369870212
 Prefab:
   m_ObjectHideFlags: 0
@@ -222,31 +227,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.18
+      value: 3.69
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9
+      value: 3.15
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -7.2
+      value: -6.86
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.60978985
+      value: 0.11158242
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.019401371
+      value: -0.15397885
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.013390972
+      value: 0.01750344
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.79221255
+      value: 0.9815975
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_RootOrder
@@ -254,15 +259,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -10.436001
+      value: -17.83
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 74.938
+      value: 12.97
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -9.945001
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
@@ -285,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818a76b2435e8f2419bbd48c510b2440, type: 3}
 --- !u!4 &1143445836 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4576421198231736, guid: 09350297a7c352a4b8cc877b644e9e31,
+  m_CorrespondingSourceObject: {fileID: 4101141662387202, guid: 09350297a7c352a4b8cc877b644e9e31,
     type: 2}
   m_PrefabInternal: {fileID: 1739869944}
 --- !u!1 &1238933210 stripped
@@ -436,6 +441,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114760899480882812, guid: 8eec0fb99fa36664b9750fd06aa9a321,
+        type: 2}
+      propertyPath: cardSituations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114760899480882812, guid: 8eec0fb99fa36664b9750fd06aa9a321,
+        type: 2}
+      propertyPath: placesCameraGoForCards.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4293000640748588, guid: 8eec0fb99fa36664b9750fd06aa9a321, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1820
@@ -507,6 +522,17 @@ Prefab:
       propertyPath: startingCameraPosition
       value: 
       objectReference: {fileID: 811850340}
+    - target: {fileID: 114760899480882812, guid: 8eec0fb99fa36664b9750fd06aa9a321,
+        type: 2}
+      propertyPath: cardSituations.Array.data[0]
+      value: 
+      objectReference: {fileID: 1995530170966728, guid: 04a9f0e86c588544c9e6f30d3b639f37,
+        type: 2}
+    - target: {fileID: 114760899480882812, guid: 8eec0fb99fa36664b9750fd06aa9a321,
+        type: 2}
+      propertyPath: placesCameraGoForCards.Array.data[0]
+      value: 
+      objectReference: {fileID: 276798343}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eec0fb99fa36664b9750fd06aa9a321, type: 2}
   m_IsPrefabAsset: 0

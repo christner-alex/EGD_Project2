@@ -26,11 +26,14 @@ public class SituationManager : MonoBehaviour {
     public List<Transform> placesCameraGoForBouncyBall;
     public List<Transform> placesCameraGoForSeeSaw;
     public List<Transform> placesCameraGoForToothpick;
+    public List<Transform> placesCameraGoForCards;
+
 
     public List<GameObject> blockSituations;
     public List<GameObject> bouncyBallSituations;
     public List<GameObject> seeSawSituations;
     public List<GameObject> toothPickSituations;
+    public List<GameObject> cardSituations;
 
     List<List<GameObject>> allSituations;
     List<List<Transform>> allCameras;
@@ -46,11 +49,14 @@ public class SituationManager : MonoBehaviour {
         allSituations.Add(bouncyBallSituations);
         allSituations.Add(seeSawSituations);
         allSituations.Add(toothPickSituations);
+        allSituations.Add(cardSituations);
+
 
         allCameras.Add(placesCameraGoForBlocks);
         allCameras.Add(placesCameraGoForBouncyBall);
         allCameras.Add(placesCameraGoForSeeSaw);
         allCameras.Add(placesCameraGoForToothpick);
+        allCameras.Add(placesCameraGoForCards);
 
     }
 
@@ -232,7 +238,7 @@ public class SituationManager : MonoBehaviour {
             {
 
 
-                Physics.gravity = new Vector3(0, -22, 0);
+                Physics.autoSimulation = true;
             }
             yield return new WaitForEndOfFrame();
         }
@@ -240,7 +246,7 @@ public class SituationManager : MonoBehaviour {
     }
     IEnumerator TransitionSituationOff(GameObject g) //physically moves the situation off stage
     {
-        Physics.gravity=new Vector3(0,0,0);
+        Physics.autoSimulation = false;
         float startTime = Time.time;
         Vector3 startPosition = g.transform.position;
         while (g.transform.position.x > startPosition.x - 50&&Time.time-startTime<4)

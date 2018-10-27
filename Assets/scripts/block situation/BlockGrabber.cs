@@ -10,6 +10,7 @@ public class BlockGrabber : MonoBehaviour {
     GameObject selectedBlock;
     Vector3 selectionPointOffset;
     public GameObject fingerCollider;
+    public bool playingCards;
     // Use this for initialization
     void Start () {
 		
@@ -69,8 +70,17 @@ public class BlockGrabber : MonoBehaviour {
                 selectedBlock.GetComponent<Rigidbody>().velocity = ((currentPlaneHitPos - (selectedBlock.transform.position)) * 4*Vector3.Distance(selectedBlock.transform.position, currentPlaneHitPos));
 
                 //rotation stuff
+                //playing cards need to be rotated differently becuase they're axis is different
                 selectedBlock.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                selectedBlock.transform.rotation = Quaternion.Lerp(selectedBlock.transform.rotation, Quaternion.Euler(Vector3.zero), 3 * Time.deltaTime);
+                if(!playingCards)
+                {
+                    selectedBlock.transform.rotation = Quaternion.Lerp(selectedBlock.transform.rotation, Quaternion.Euler(Vector3.zero), 3 * Time.deltaTime);
+                }
+                else
+                {
+                    selectedBlock.transform.rotation = Quaternion.Lerp(selectedBlock.transform.rotation, Quaternion.Euler(new Vector3(0,90,0)), 3 * Time.deltaTime);
+
+                }
             }
             else
             {
