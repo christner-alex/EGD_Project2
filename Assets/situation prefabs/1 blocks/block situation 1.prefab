@@ -681,7 +681,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1099838986018204}
   m_LocalRotation: {x: -0.707107, y: -0, z: -0, w: 0.7071066}
-  m_LocalPosition: {x: 6.9266443, y: -0.15578634, z: -8.044071}
+  m_LocalPosition: {x: 6.9266443, y: -0.15578634, z: -10.32}
   m_LocalScale: {x: 223.06314, y: 1, z: 101.92149}
   m_Children: []
   m_Father: {fileID: 4129819282553586}
@@ -1821,6 +1821,7 @@ MonoBehaviour:
     m_Bits: 307
   hasHitBlock: 0
   fingerCollider: {fileID: 1151276834365116}
+  playingCards: 0
 --- !u!114 &114372446441239134
 MonoBehaviour:
   m_ObjectHideFlags: 1

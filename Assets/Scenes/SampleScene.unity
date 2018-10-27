@@ -227,47 +227,35 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.69
+      value: 0.17995487
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.15
+      value: 8.999891
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -6.86
+      value: -5.81
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.11158242
+      value: 0.6818876
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.15397885
+      value: -0.018047752
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.01750344
+      value: -0.0151634505
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9815975
+      value: 0.731077
       objectReference: {fileID: 0}
     - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -17.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 12.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 4695043626938958, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6e2f2770c286f24283d647cf5a509e9, type: 2}
@@ -342,10 +330,15 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1109297762}
-    - target: {fileID: 224913025337663514, guid: 601204354b4dffb47876800870bfcff2,
+    - target: {fileID: 224408564719312130, guid: 601204354b4dffb47876800870bfcff2,
         type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
+      propertyPath: m_AnchoredPosition.x
+      value: -103.8999
+      objectReference: {fileID: 0}
+    - target: {fileID: 224408564719312130, guid: 601204354b4dffb47876800870bfcff2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 92.69995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 601204354b4dffb47876800870bfcff2, type: 2}
@@ -441,16 +434,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114760899480882812, guid: 8eec0fb99fa36664b9750fd06aa9a321,
-        type: 2}
-      propertyPath: cardSituations.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114760899480882812, guid: 8eec0fb99fa36664b9750fd06aa9a321,
-        type: 2}
-      propertyPath: placesCameraGoForCards.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4293000640748588, guid: 8eec0fb99fa36664b9750fd06aa9a321, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1820
@@ -519,20 +502,14 @@ Prefab:
       objectReference: {fileID: 1143445836}
     - target: {fileID: 114760899480882812, guid: 8eec0fb99fa36664b9750fd06aa9a321,
         type: 2}
-      propertyPath: startingCameraPosition
-      value: 
-      objectReference: {fileID: 811850340}
-    - target: {fileID: 114760899480882812, guid: 8eec0fb99fa36664b9750fd06aa9a321,
-        type: 2}
-      propertyPath: cardSituations.Array.data[0]
-      value: 
-      objectReference: {fileID: 1995530170966728, guid: 04a9f0e86c588544c9e6f30d3b639f37,
-        type: 2}
-    - target: {fileID: 114760899480882812, guid: 8eec0fb99fa36664b9750fd06aa9a321,
-        type: 2}
       propertyPath: placesCameraGoForCards.Array.data[0]
       value: 
       objectReference: {fileID: 276798343}
+    - target: {fileID: 114760899480882812, guid: 8eec0fb99fa36664b9750fd06aa9a321,
+        type: 2}
+      propertyPath: startingCameraPosition
+      value: 
+      objectReference: {fileID: 811850340}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eec0fb99fa36664b9750fd06aa9a321, type: 2}
   m_IsPrefabAsset: 0
