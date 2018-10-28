@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
+[System.Serializable]
+public class ListWrapper
+{
+    public List<GameObject> innerList;
+}
+
+
+
 public class SituationManager : MonoBehaviour {
     public List<GameObject> situations;
     public List<string> messages;
@@ -22,42 +31,40 @@ public class SituationManager : MonoBehaviour {
     public GameObject floor;
     public Color textColor;
     public List<string> listOfWords;
-    public List<Transform> placesCameraGoForBlocks;
-    public List<Transform> placesCameraGoForBouncyBall;
-    public List<Transform> placesCameraGoForSeeSaw;
-    public List<Transform> placesCameraGoForToothpick;
-    public List<Transform> placesCameraGoForCards;
+    public List<ListWrapper> allSituations;
 
-
-    public List<GameObject> blockSituations;
-    public List<GameObject> bouncyBallSituations;
-    public List<GameObject> seeSawSituations;
-    public List<GameObject> toothPickSituations;
-    public List<GameObject> cardSituations;
-
-    List<List<GameObject>> allSituations;
-    List<List<Transform>> allCameras;
+    //List<List<GameObject>> allSituations;
+    public List<ListWrapper> allCameras;
     public Transform startingCameraPosition;
+    bool transitioning;
+    public float[] likelyhoodOfShowingText;
+    int messageLikelyhoodIndex;
+    public List<int> situationOrder;
+    int situationOrderCurrentIndex;
+    public Color[] possibleWarmColors;
+    public Color[] possibleCoolColors;
+    public Light leftLight;
+    public Light rightLight;
+    public float minLightIntensity;
+    public float maxLightIntensity;
     // Use this for initialization
     void Start () {
         Camera.main.transform.position = startingCameraPosition.position;
         Camera.main.transform.rotation = startingCameraPosition.rotation;
 		listOfWords = new List<string>();
-        allSituations = new List<List<GameObject>>();
-        allCameras = new List<List<Transform>>();
-        allSituations.Add(blockSituations);
-        allSituations.Add(bouncyBallSituations);
-        allSituations.Add(seeSawSituations);
-        allSituations.Add(toothPickSituations);
-        allSituations.Add(cardSituations);
+        situationOrder = new List<int>();
+        Debug.Log(allSituations.Count);
+        for (int i=0;i< allSituations.Count; i++)
+        {
+            int value = Random.Range(0, allSituations.Count);
+            while (situationOrder.Contains(value))
+            {
+                value = Random.Range(0, allSituations.Count);
+            }
+            Debug.Log("added");
 
-
-        allCameras.Add(placesCameraGoForBlocks);
-        allCameras.Add(placesCameraGoForBouncyBall);
-        allCameras.Add(placesCameraGoForSeeSaw);
-        allCameras.Add(placesCameraGoForToothpick);
-        allCameras.Add(placesCameraGoForCards);
-
+            situationOrder.Add(value);
+        }
     }
 
     // Update is called once per frame
@@ -67,44 +74,114 @@ public class SituationManager : MonoBehaviour {
 
     public void TriggerNext() //if there's a change on stage
     {
-        if (currentlyDisplayed == 0) //transition situation off and message on
+        if(!transitioning)
         {
-            StartCoroutine("TransitionSituationOff", currentSituation);
-            currentMessageIndex++;
-            currentMessageIndex = currentMessageIndex % messages.Count;
-            StopCoroutine("TransitionTextOn");
-            StartCoroutine("TransitionTextOn", messages[currentMessageIndex]);
-            currentMessage = messages[currentMessageIndex];
+            if (currentlyDisplayed == 0) // currently showing situation (and needs to change)
+            {
+                StartCoroutine("TransitionSituationOff", currentSituation); //always transition the situation off
+                bool shouldShowMessage; //determine if message should show
+
+                if (Random.Range(0f,1f)<= likelyhoodOfShowingText[messageLikelyhoodIndex])
+                {
+                    shouldShowMessage = true;
+                    messageLikelyhoodIndex = 0;
+                }
+                else
+                {
+                    messageLikelyhoodIndex = (messageLikelyhoodIndex + 1) % likelyhoodOfShowingText.Length;
+                    shouldShowMessage = false;
+                }
+
+                if (shouldShowMessage) //if a message should show, transition it on
+                {
+                    currentMessageIndex++;
+                    currentMessageIndex = currentMessageIndex % messages.Count;
+                    StopCoroutine("TransitionTextOn");
+                    StartCoroutine("TransitionTextOn", messages[currentMessageIndex]);
+                    currentMessage = messages[currentMessageIndex];
+                    currentlyDisplayed = 1;
+                }
+                else
+                {
+
+                    int randomSituation = situationOrder[situationOrderCurrentIndex];
+
+                    GameObject selectedSituation = allSituations[randomSituation].innerList[Random.Range(0, allSituations[randomSituation].innerList.Count)];
+                    StartCoroutine("TransitionSituationOn", selectedSituation);
+                    StartCoroutine("TransitionCamera", randomSituation);
+                    StartCoroutine("TransitionLightColor");
+                    currentlyDisplayed = 0;
+
+                }
+            }
+            else if (currentlyDisplayed == 1) //currently showing message (and needs to change)
+            {
+                StartCoroutine("TransitionTextOff");
+                currentSituationIndex++;
+                currentSituationIndex = currentSituationIndex % situations.Count;
+
+                //list of a list, selects random element (which is a list) in larger list, then random element in the selected list
+                int randomSituation = situationOrder[situationOrderCurrentIndex];
+
+                GameObject selectedSituation = allSituations[randomSituation].innerList[Random.Range(0, allSituations[randomSituation].innerList.Count)];
+                StartCoroutine("TransitionSituationOn", selectedSituation);
+                StartCoroutine("TransitionCamera", randomSituation);
+                currentlyDisplayed = 0;
+            }
+  
         }
-        if (currentlyDisplayed==1) //transition situation on and message off
+       
+
+    }
+    IEnumerator TransitionLightColor()
+    {
+        bool leftCoolSide=false;
+        if(Random.Range(0,2)==0)
         {
-            StartCoroutine("TransitionTextOff");
-            currentSituationIndex++;
-            currentSituationIndex = currentSituationIndex % situations.Count;
+            leftCoolSide = true;
+        }
+        float startTime = Time.time;
+        Color startLeftColor = leftLight.color;
+        Color startRightColor = rightLight.color;
+        Color targetLeftColor;
+        Color targetRightColor;
+        float rightLightIntensity = Random.Range(minLightIntensity, maxLightIntensity);
+        float leftLightIntensity = Random.Range(minLightIntensity, maxLightIntensity);
+        float leftStartIntensity = leftLight.intensity;
+        float rightStartIntensity = rightLight.intensity;
+        if (leftCoolSide)
+        {
+            targetLeftColor = possibleCoolColors[Random.Range(0, possibleCoolColors.Length)];
+            targetRightColor = possibleWarmColors[Random.Range(0, possibleWarmColors.Length)];
+        }
+        else
+        {
+            targetRightColor = possibleCoolColors[Random.Range(0, possibleCoolColors.Length)];
+            targetLeftColor = possibleWarmColors[Random.Range(0, possibleWarmColors.Length)];
+        }
+        while (Time.time-startTime<1f)
+        {
+            leftLight.color = Color.Lerp(startLeftColor, targetLeftColor, cameraTransition.Evaluate((Time.time - startTime) / 1));
+            rightLight.color = Color.Lerp(startRightColor, targetRightColor, cameraTransition.Evaluate((Time.time - startTime) / 1));
+            leftLight.intensity = Mathf.Lerp(leftStartIntensity, leftLightIntensity, cameraTransition.Evaluate((Time.time - startTime) / 1));
+            rightLight.intensity = Mathf.Lerp(rightStartIntensity, rightLightIntensity, cameraTransition.Evaluate((Time.time - startTime) / 1));
 
-            //list of a list, selects random element (which is a list) in larger list, then random element in the selected list
-            int randomSituation = Random.Range(0, allSituations.Count);
-
-            GameObject selectedSituation = allSituations[randomSituation][Random.Range(0, allSituations[randomSituation].Count)];
-            StartCoroutine("TransitionSituationOn", selectedSituation);
-            StartCoroutine("TransitionCamera", randomSituation);
+            yield return new WaitForEndOfFrame();
 
         }
-        currentlyDisplayed++;
-        currentlyDisplayed = currentlyDisplayed % 2;
-
+        yield return new WaitForEndOfFrame();
     }
     IEnumerator TransitionCamera(int index) //move camera to correct position based on situation
     {
         float startTime = Time.time;
         Vector3 startPosition= Camera.main.transform.transform.position;
         Quaternion startRot= Camera.main.transform.transform.rotation;
-        int randomCameraWithinSituation = Random.Range(0, allCameras[index].Count);
+        int randomCameraWithinSituation = Random.Range(0, allCameras[index].innerList.Count);
         while (Time.time-startTime<=1)
         {
 
-            Camera.main.transform.transform.position = Vector3.Lerp(startPosition, allCameras[index][randomCameraWithinSituation].position, cameraTransition.Evaluate((Time.time - startTime) /1));
-            Camera.main.transform.transform.rotation = Quaternion.Lerp(startRot, allCameras[index][randomCameraWithinSituation].rotation, cameraTransition.Evaluate((Time.time - startTime) / 1));
+            Camera.main.transform.transform.position = Vector3.Lerp(startPosition, allCameras[index].innerList[randomCameraWithinSituation].transform.position, cameraTransition.Evaluate((Time.time - startTime) /1));
+            Camera.main.transform.transform.rotation = Quaternion.Lerp(startRot, allCameras[index].innerList[randomCameraWithinSituation].transform.rotation, cameraTransition.Evaluate((Time.time - startTime) / 1));
             yield return new WaitForEndOfFrame();
 
         }
@@ -113,6 +190,7 @@ public class SituationManager : MonoBehaviour {
 
     IEnumerator TransitionTextOn(string t) //transition messagae text on
     {
+        transitioning = true;
         messageObject.text = "";
         listOfWords.Clear();
         messageObject.color = new Color(textColor.r, textColor.g, textColor.b, 1);
@@ -147,7 +225,7 @@ public class SituationManager : MonoBehaviour {
         StopCoroutine("UpdateTextToList");
 
         messageObject.text =  messages[currentMessageIndex]+" ";
-
+        transitioning = false;
         yield return new WaitForEndOfFrame();
     }
 
@@ -227,6 +305,22 @@ public class SituationManager : MonoBehaviour {
     }
     IEnumerator TransitionSituationOn(GameObject g) //physically moves the situation into the right spot
     {
+
+        transitioning = true;
+        yield return new WaitForSeconds(.75f);
+        float randomValue = Random.Range(0, 1f);
+        if (randomValue >= .9)
+        {
+            Physics.gravity = Vector3.zero;
+        }
+        else if(randomValue>=.7f)
+        {
+            Physics.gravity = new Vector3(0,-4, 0);
+        }
+        else
+        {
+            Physics.gravity = new Vector3(0, -22, 0);
+        }
         GameObject tmp =  (Instantiate(g, g.transform.position + new Vector3(50,0,0), Quaternion.identity)) as GameObject;
         currentSituation = tmp;
 
@@ -234,7 +328,7 @@ public class SituationManager : MonoBehaviour {
         while (Time.time-startTime<1.5f)
         {
             tmp.transform.position = Vector3.Lerp(g.transform.position + new Vector3(50, 0, 0), g.transform.position,transitionCurveOn.Evaluate((Time.time - startTime) / (transitionDuration*1.5f)));
-            if(transitionCurveOn.Evaluate((Time.time - startTime) / transitionDuration) > .8f)
+            if(transitionCurveOn.Evaluate((Time.time - startTime) / transitionDuration) > .9f)
             {
 
 
@@ -242,6 +336,9 @@ public class SituationManager : MonoBehaviour {
             }
             yield return new WaitForEndOfFrame();
         }
+
+        situationOrderCurrentIndex = (situationOrderCurrentIndex + 1) % situationOrder.Count;
+        transitioning = false;
         yield return new WaitForEndOfFrame();
     }
     IEnumerator TransitionSituationOff(GameObject g) //physically moves the situation off stage
