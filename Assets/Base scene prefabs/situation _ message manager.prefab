@@ -179,7 +179,11 @@ MonoBehaviour:
     - {fileID: 1533420142673658, guid: 4190b766602d41c41809ed061dcd6274, type: 2}
   - innerList:
     - {fileID: 1995530170966728, guid: 04a9f0e86c588544c9e6f30d3b639f37, type: 2}
+  - innerList:
+    - {fileID: 1995530170966728, guid: ae68a00c8d77b774292fcd58139c3ae6, type: 2}
   allCameras:
+  - innerList:
+    - {fileID: 0}
   - innerList:
     - {fileID: 0}
   - innerList:

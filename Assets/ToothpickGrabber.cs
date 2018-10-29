@@ -17,6 +17,10 @@ public class ToothpickGrabber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(transform.root.transform.position.x<-15&&pusher!=null)
+        {
+            Destroy(pusher);
+        }
         if (Input.GetMouseButtonDown(0))
         {
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -36,8 +40,12 @@ public class ToothpickGrabber : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, mask))
             {
-                pusher.transform.position = hit.point;
-                pusher.transform.up = hit.point - pusherLookTarget.position;
+                if(pusher!=null)
+                {
+                    pusher.transform.position = hit.point;
+                    pusher.transform.up = hit.point - pusherLookTarget.position;
+                }
+
                 gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;    
                 gameObject.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(gameObject.GetComponent<Rigidbody>().position,hit.point,10*Time.deltaTime));

@@ -11,6 +11,7 @@ public class BlockGrabber : MonoBehaviour {
     Vector3 selectionPointOffset;
     public GameObject fingerCollider;
     public bool playingCards;
+    public bool balloons;
     // Use this for initialization
     void Start () {
 		
@@ -72,15 +73,23 @@ public class BlockGrabber : MonoBehaviour {
                 //rotation stuff
                 //playing cards need to be rotated differently becuase they're axis is different
                 selectedBlock.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                if(!playingCards)
+                if(playingCards)
                 {
-                    selectedBlock.transform.rotation = Quaternion.Lerp(selectedBlock.transform.rotation, Quaternion.Euler(Vector3.zero), 3 * Time.deltaTime);
+                    selectedBlock.transform.rotation = Quaternion.Lerp(selectedBlock.transform.rotation, Quaternion.Euler(new Vector3(0, 90, 0)), 3 * Time.deltaTime);
+                }
+                else if(balloons)
+                {
+
+                }
+                else if(selectedBlock.name=="lid") //the lid on the trashcan needs this if statement to rotate correctly
+                {
+                    selectedBlock.transform.localRotation = Quaternion.Lerp(selectedBlock.transform.localRotation, Quaternion.Euler(new Vector3(61.437f, 0, 0)), 3 * Time.deltaTime);
                 }
                 else
                 {
-                    selectedBlock.transform.rotation = Quaternion.Lerp(selectedBlock.transform.rotation, Quaternion.Euler(new Vector3(0,90,0)), 3 * Time.deltaTime);
-
+                    selectedBlock.transform.rotation = Quaternion.Lerp(selectedBlock.transform.rotation, Quaternion.Euler(Vector3.zero), 3 * Time.deltaTime);
                 }
+
             }
             else
             {

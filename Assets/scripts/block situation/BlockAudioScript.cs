@@ -10,7 +10,7 @@ public class BlockAudioScript : MonoBehaviour {
 	float pitchRangeLow = .6f;
 	float pitchRangeHight = .65f;
 	float collisionThreshold = 0f;
-	float thresholdWeight = 5f;
+	float thresholdWeight = 5f; 
     float maxVol=.1f;
 	// Use this for initialization
 	void Start () {

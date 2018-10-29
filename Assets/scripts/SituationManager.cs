@@ -53,7 +53,7 @@ public class SituationManager : MonoBehaviour {
         Camera.main.transform.rotation = startingCameraPosition.rotation;
 		listOfWords = new List<string>();
         situationOrder = new List<int>();
-        Debug.Log(allSituations.Count);
+
         for (int i=0;i< allSituations.Count; i++)
         {
             int value = Random.Range(0, allSituations.Count);
@@ -61,7 +61,7 @@ public class SituationManager : MonoBehaviour {
             {
                 value = Random.Range(0, allSituations.Count);
             }
-            Debug.Log("added");
+
 
             situationOrder.Add(value);
         }
@@ -126,6 +126,7 @@ public class SituationManager : MonoBehaviour {
                 GameObject selectedSituation = allSituations[randomSituation].innerList[Random.Range(0, allSituations[randomSituation].innerList.Count)];
                 StartCoroutine("TransitionSituationOn", selectedSituation);
                 StartCoroutine("TransitionCamera", randomSituation);
+                StartCoroutine("TransitionLightColor");
                 currentlyDisplayed = 0;
             }
   
@@ -321,6 +322,14 @@ public class SituationManager : MonoBehaviour {
         {
             Physics.gravity = new Vector3(0, -22, 0);
         }
+        if(situationOrder[situationOrderCurrentIndex]==5) //5 is balloon, so override to make it zero g
+        {
+            Physics.gravity = new Vector3(0, -1, 0);
+        }
+        if (situationOrder[situationOrderCurrentIndex] == 3) //with toothpicks, don't go zero g
+        {
+            Physics.gravity = new Vector3(0, -22, 0);
+        }
         GameObject tmp =  (Instantiate(g, g.transform.position + new Vector3(50,0,0), Quaternion.identity)) as GameObject;
         currentSituation = tmp;
 
@@ -346,7 +355,7 @@ public class SituationManager : MonoBehaviour {
         Physics.autoSimulation = false;
         float startTime = Time.time;
         Vector3 startPosition = g.transform.position;
-        while (g.transform.position.x > startPosition.x - 50&&Time.time-startTime<4)
+        while (g.transform.position.x > startPosition.x - 50&&Time.time-startTime<3)
         {
             g.transform.position = Vector3.Lerp(startPosition, new Vector3(startPosition.x - 50, startPosition.y, startPosition.z),transitionCurveOff.Evaluate((Time.time - startTime) / (transitionDuration * 1.5f)));
             yield return new WaitForEndOfFrame();
