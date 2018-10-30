@@ -181,7 +181,15 @@ MonoBehaviour:
     - {fileID: 1995530170966728, guid: 04a9f0e86c588544c9e6f30d3b639f37, type: 2}
   - innerList:
     - {fileID: 1995530170966728, guid: ae68a00c8d77b774292fcd58139c3ae6, type: 2}
+  - innerList:
+    - {fileID: 1520967202127156, guid: 01ec33173b28a3748950fb01c8357f51, type: 2}
+  - innerList:
+    - {fileID: 1115081054525372, guid: 4f1e05534b7c2f846b705e7ce362cc40, type: 2}
   allCameras:
+  - innerList:
+    - {fileID: 0}
+  - innerList:
+    - {fileID: 0}
   - innerList:
     - {fileID: 0}
   - innerList:
@@ -197,7 +205,7 @@ MonoBehaviour:
   startingCameraPosition: {fileID: 0}
   likelyhoodOfShowingText:
   - 0
-  - 0.05
+  - 0.1
   - 0.1
   - 0.5
   - 1
