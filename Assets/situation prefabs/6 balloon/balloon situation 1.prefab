@@ -1343,7 +1343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popSound: {fileID: 8300000, guid: de9dc1af84a965d499552430038aafb2, type: 3}
-  volume: 0
+  volume: 1
 --- !u!135 &135264893390843490
 SphereCollider:
   m_ObjectHideFlags: 1

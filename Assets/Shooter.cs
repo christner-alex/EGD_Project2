@@ -27,6 +27,7 @@ public class Shooter : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)&& Physics.Raycast(ray, out hit,100, interactionMask)&& coolDown>.01f)
         {
             GameObject g = Instantiate(selectedObject, spawnPoint.position, Quaternion.Euler(new Vector3(Random.Range(0f, 259f), Random.Range(0f, 259f), Random.Range(0f, 259f)))) as GameObject;
+            g.transform.parent = transform;
             //g.AddComponent<Rigidbody>();  
             g.GetComponent<Rigidbody>().velocity = (hit.point - g.transform.position).normalized * launchSpeed;
             coolDown = 0;

@@ -330,6 +330,10 @@ public class SituationManager : MonoBehaviour {
         {
             Physics.gravity = new Vector3(0, -22, 0);
         }
+        if (situationOrder[situationOrderCurrentIndex] == 6) //with trash, don't go zero g
+        {
+            Physics.gravity = new Vector3(0, -22, 0);
+        }
         GameObject tmp =  (Instantiate(g, g.transform.position + new Vector3(50,0,0), Quaternion.identity)) as GameObject;
         currentSituation = tmp;
 
@@ -355,9 +359,9 @@ public class SituationManager : MonoBehaviour {
         Physics.autoSimulation = false;
         float startTime = Time.time;
         Vector3 startPosition = g.transform.position;
-        while (g.transform.position.x > startPosition.x - 50&&Time.time-startTime<3)
+        while (g.transform.position.x > startPosition.x - 50&&Time.time-startTime<1)
         {
-            g.transform.position = Vector3.Lerp(startPosition, new Vector3(startPosition.x - 50, startPosition.y, startPosition.z),transitionCurveOff.Evaluate((Time.time - startTime) / (transitionDuration * 1.5f)));
+            g.transform.position = Vector3.Lerp(startPosition, new Vector3(startPosition.x - 50, startPosition.y, startPosition.z),transitionCurveOff.Evaluate((Time.time - startTime) / (1 * 1.5f)));
             yield return new WaitForEndOfFrame();
         }
         Destroy(g);
