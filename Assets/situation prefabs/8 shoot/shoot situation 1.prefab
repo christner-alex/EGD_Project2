@@ -2037,8 +2037,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 4263013562408938}
   possibleObjsToShoot:
   - {fileID: 1033247690714716, guid: bff5f2aa4cb53e347a55e21e6b43f58a, type: 2}
-  - {fileID: 1033247690714716, guid: 9219ecad1929da54f8a937aab098ac56, type: 2}
-  - {fileID: 1033247690714716, guid: b45bc5be65d28394681f89a8c7996d70, type: 2}
+  - {fileID: 1021685547618692, guid: 9b93ad46270399147a3e69974e98702a, type: 2}
   possibleAudioToEmit: []
 --- !u!114 &114601714794825008
 MonoBehaviour:
@@ -2073,6 +2072,7 @@ MonoBehaviour:
   fingerCollider: {fileID: 1941882514122488}
   playingCards: 0
   balloons: 0
+  hotdogSpeed: 0
 --- !u!135 &135144219234662736
 SphereCollider:
   m_ObjectHideFlags: 1

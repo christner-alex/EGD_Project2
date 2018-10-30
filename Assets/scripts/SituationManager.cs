@@ -359,9 +359,9 @@ public class SituationManager : MonoBehaviour {
         Physics.autoSimulation = false;
         float startTime = Time.time;
         Vector3 startPosition = g.transform.position;
-        while (g.transform.position.x > startPosition.x - 50&&Time.time-startTime<1)
+        while (g.transform.position.x > startPosition.x - 50&&Time.time-startTime<1.5f)
         {
-            g.transform.position = Vector3.Lerp(startPosition, new Vector3(startPosition.x - 50, startPosition.y, startPosition.z),transitionCurveOff.Evaluate((Time.time - startTime) / (1 * 1.5f)));
+            g.transform.position = Vector3.Lerp(startPosition, new Vector3(startPosition.x - 200, startPosition.y, startPosition.z),transitionCurveOff.Evaluate((Time.time - startTime) / (1.5f * 1.5f)));
             yield return new WaitForEndOfFrame();
         }
         Destroy(g);

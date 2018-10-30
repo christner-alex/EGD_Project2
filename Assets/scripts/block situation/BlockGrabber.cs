@@ -12,6 +12,7 @@ public class BlockGrabber : MonoBehaviour {
     public GameObject fingerCollider;
     public bool playingCards;
     public bool balloons;
+    public float hotdogSpeed;
     // Use this for initialization
     void Start () {
 		
@@ -65,7 +66,11 @@ public class BlockGrabber : MonoBehaviour {
             {
                 fingerCollider.GetComponent<CapsuleCollider>().isTrigger = true; //finger pushing disabled
 
-                selectedBlock.GetComponent<Rigidbody>().mass = .5f; //reduce mass of block so it doesn't push other blocks too much
+                if(selectedBlock.name!="banana")
+                {
+                    selectedBlock.GetComponent<Rigidbody>().mass = .5f; //reduce mass of block so it doesn't push other blocks too much
+
+                }
 
                 //set velocity to move it. Moves it toward the target position on the interation plane, scaled by the distance it is from it.
                 selectedBlock.GetComponent<Rigidbody>().velocity = ((currentPlaneHitPos - (selectedBlock.transform.position)) * 4*Vector3.Distance(selectedBlock.transform.position, currentPlaneHitPos));
@@ -84,6 +89,10 @@ public class BlockGrabber : MonoBehaviour {
                 else if(selectedBlock.name=="lid") //the lid on the trashcan needs this if statement to rotate correctly
                 {
                     selectedBlock.transform.localRotation = Quaternion.Lerp(selectedBlock.transform.localRotation, Quaternion.Euler(new Vector3(61.437f, 0, 0)), 3 * Time.deltaTime);
+                }
+                else if (selectedBlock.name == "7hotdog") //hot dog rotation
+                {
+                    selectedBlock.GetComponent<Rigidbody>().angularVelocity=(new Vector3(Random.Range(-1f,1f) * hotdogSpeed, Random.Range(-1f, 1f) * hotdogSpeed, Random.Range(-1f, 1f) * hotdogSpeed));
                 }
                 else
                 {

@@ -1342,8 +1342,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad57d870d7101a41a132ff9d7e7381c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  options:
+  - {fileID: 8300000, guid: cd03c11d9efeb91489c1a1959951ff41, type: 3}
+  - {fileID: 8300000, guid: 3f6408cf4e8c20b43b2add78d2fa7dd5, type: 3}
+  - {fileID: 8300000, guid: 53f4d2cc4c809bd4abe3f53a1e55ae25, type: 3}
+  - {fileID: 8300000, guid: 7a49851f62a1a5b4db868e43e99a1fc5, type: 3}
+  - {fileID: 8300000, guid: de9dc1af84a965d499552430038aafb2, type: 3}
+  - {fileID: 8300000, guid: d6ed0658542327044b82401b9acc93a2, type: 3}
+  - {fileID: 8300000, guid: 66a052d835c067441b564c52e64e4289, type: 3}
+  - {fileID: 8300000, guid: 38e48ddcdf44e344cb6de42ecebab0dc, type: 3}
   popSound: {fileID: 8300000, guid: de9dc1af84a965d499552430038aafb2, type: 3}
   volume: 1
+  particleEffect: {fileID: 1754354167916620, guid: 948faafd6d720ed47acfdb76a35b014b,
+    type: 2}
 --- !u!135 &135264893390843490
 SphereCollider:
   m_ObjectHideFlags: 1
