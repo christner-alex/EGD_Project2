@@ -6,6 +6,7 @@ public class PopOnNeedleTouch : MonoBehaviour {
     public AudioClip[] options;
     public AudioClip popSound;
     public float volume;
+	public float pitch = 1f;
     public GameObject particleEffect;
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,7 @@ public class PopOnNeedleTouch : MonoBehaviour {
         if (col.gameObject.name.Contains("needle") && col.collider.GetType().ToString() == typeof(SphereCollider).ToString())
         {
             col.gameObject.GetComponent<AudioSource>().clip = popSound;
+			col.gameObject.GetComponent<AudioSource> ().pitch = pitch;
             col.gameObject.GetComponent<AudioSource>().PlayOneShot(popSound, volume);
             GameObject g = Instantiate(particleEffect, transform.position, Quaternion.identity) as GameObject;
             g.transform.parent = col.transform;
