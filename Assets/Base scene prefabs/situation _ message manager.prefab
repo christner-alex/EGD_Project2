@@ -55,13 +55,26 @@ MonoBehaviour:
   - {fileID: 1433949961473334, guid: e39255a4a468f964aa25926e31e951d5, type: 2}
   - {fileID: 1351052057294996, guid: 96abf2791869c914e92f4e97f363c34a, type: 2}
   messages:
-  - 'Take a deep breath. '
-  - "You\u2019ve got this!"
-  - 'The world cares about you. '
-  - 'Keep trying your best!  '
-  - 'Even though the world is difficult, you are still here. '
-  - 'Great job! '
-  - 'Have you been getting enough sleep? '
+  - Take a deep breath
+  - The world cares about you
+  - Keep trying!
+  - "You\u2019re doing awesome!"
+  - "There\u2019s nothing wrong with taking a break"
+  - Enjoy!
+  - "Make sure you\u2019re taking care of yourself"
+  - "Hope you\u2019re having a good day!"
+  - Have you done anything to relax today?
+  - How are you doing today?
+  - Did you have fun?
+  - Thank you so much!
+  - Your feelings are your own
+  - Make some time for friends
+  - "It\u2019s gonna be ok"
+  - "Don\u2019t lose sight of what\u2019s important!"
+  - "What\u2019s on your mind?"
+  - Beautiful!
+  - Be proud of yourself
+  - Follow the things that make you happy
   currentSituation: {fileID: 0}
   currentSituationIndex: 0
   messageObject: {fileID: 0}
@@ -171,22 +184,57 @@ MonoBehaviour:
   - innerList:
     - {fileID: 1433949961473334, guid: e39255a4a468f964aa25926e31e951d5, type: 2}
     - {fileID: 1351052057294996, guid: 96abf2791869c914e92f4e97f363c34a, type: 2}
+    - {fileID: 1351052057294996, guid: 907f5ef73f82be74f97eaf8f62323c2c, type: 2}
+    - {fileID: 1406865197540196, guid: 88edb57023005e14eb1e0e63ab285c04, type: 2}
+    - {fileID: 1650552282414416, guid: 3f920537f92596b44ad7d2fc49a0c648, type: 2}
   - innerList:
     - {fileID: 1764111562001548, guid: dde9463a955da4141a07b8afbd1c664b, type: 2}
+    - {fileID: 1817414723811172, guid: b346970fa4e044543a9cc8e63af72017, type: 2}
+    - {fileID: 1574970931765836, guid: 3b50c12a1bb59bd4ebaddf1e6aab1ee0, type: 2}
+    - {fileID: 1069178609563532, guid: 49d941f744cdb084d956468ded392271, type: 2}
+    - {fileID: 1861859115239788, guid: 8cf84b5b2bbaec442bb80bc23de2b2e8, type: 2}
   - innerList:
     - {fileID: 1102514222088812, guid: e1ac22ec5461e1047aa7ad57b2c2247e, type: 2}
+    - {fileID: 1287260621596900, guid: 85f145495d64a7a42b2e6fd50516bfe8, type: 2}
+    - {fileID: 1741765338970830, guid: 33373dd9581707544b71e2b81ece4720, type: 2}
+    - {fileID: 1184350338558042, guid: 267452ba92cc8904f8c92d455fc3f11f, type: 2}
+    - {fileID: 1240408555329824, guid: c924fbf956f54244a92e30e59bec096a, type: 2}
   - innerList:
     - {fileID: 1533420142673658, guid: 4190b766602d41c41809ed061dcd6274, type: 2}
+    - {fileID: 1896133686610332, guid: f0d6cdc099b1a0141bb09e32cce91985, type: 2}
+    - {fileID: 1851049642911724, guid: c76070757d3476c408203841f880ce7d, type: 2}
+    - {fileID: 1349466774866078, guid: 97cbceede26c6774dacc59613324df74, type: 2}
+    - {fileID: 1993422480934114, guid: 8c890c5cc01d63b4f903de1185afa3d5, type: 2}
   - innerList:
     - {fileID: 1995530170966728, guid: 04a9f0e86c588544c9e6f30d3b639f37, type: 2}
+    - {fileID: 1848793834050740, guid: c520996d978a9d34e9be08fb876163dd, type: 2}
+    - {fileID: 1234545929906722, guid: cbc29971c7de23e49a1cd21f511a4e69, type: 2}
+    - {fileID: 1047371961719212, guid: 61650992be22ea84687293dce661ffb8, type: 2}
+    - {fileID: 1995530170966728, guid: d5ce763a4b72b764dac9ca3befa4e012, type: 2}
   - innerList:
     - {fileID: 1995530170966728, guid: ae68a00c8d77b774292fcd58139c3ae6, type: 2}
+    - {fileID: 1855674143616936, guid: b8c56ac295f2f494582b5295bfe7d72b, type: 2}
+    - {fileID: 1906102366510296, guid: f647b3682884063448fa5f595c534a12, type: 2}
+    - {fileID: 1278427809905190, guid: 92c92942d36ee04409475a516148c827, type: 2}
+    - {fileID: 1413610092035676, guid: 62925c215c84da549bf08852c7187534, type: 2}
   - innerList:
     - {fileID: 1520967202127156, guid: 01ec33173b28a3748950fb01c8357f51, type: 2}
+    - {fileID: 1242093467614214, guid: f9088721ffc514a49b322708fc63e319, type: 2}
+    - {fileID: 1263174588233692, guid: 5b435ece24c406c42b15ec0eab1e92e4, type: 2}
+    - {fileID: 1614010636071130, guid: 4449caa3db7a5394b8272689fdb406ec, type: 2}
+    - {fileID: 1352259828262114, guid: 509dd0448efc7344b98a3f414e5c1b1f, type: 2}
   - innerList:
     - {fileID: 1115081054525372, guid: 4f1e05534b7c2f846b705e7ce362cc40, type: 2}
+    - {fileID: 1037027872989146, guid: b7f12a35c8dbe0e478e1af2f32b93412, type: 2}
+    - {fileID: 1447540035464428, guid: cb8937edc41d00a45afb342b41db4f9e, type: 2}
+    - {fileID: 1482421773136956, guid: 15b45bbbabc93f74482788e83ace61c1, type: 2}
+    - {fileID: 1506493382724414, guid: 9f80266004a1d9a468998c6723f9b8a6, type: 2}
   - innerList:
     - {fileID: 1594674078638560, guid: 6c10b7348afb9064fb2163a4c02b1ff1, type: 2}
+    - {fileID: 1501207682238446, guid: 9bbabba3577334b499483309e90317eb, type: 2}
+    - {fileID: 1269610042008700, guid: 334a5455e9621844eb7e3785761285f5, type: 2}
+    - {fileID: 1432622755569146, guid: ca0088aca2c4c1640a55b55ce38191c6, type: 2}
+    - {fileID: 1075189979785314, guid: dcadf77bf6fe76a43b1f86507aca0c77, type: 2}
   allCameras:
   - innerList:
     - {fileID: 0}
@@ -210,7 +258,7 @@ MonoBehaviour:
   likelyhoodOfShowingText:
   - 0
   - 0.1
-  - 0.1
+  - 0.2
   - 0.5
   - 1
   situationOrder: 

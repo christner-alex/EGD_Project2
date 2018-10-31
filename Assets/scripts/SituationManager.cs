@@ -53,8 +53,7 @@ public class SituationManager : MonoBehaviour {
         Camera.main.transform.rotation = startingCameraPosition.rotation;
 		listOfWords = new List<string>();
         situationOrder = new List<int>();
-
-        for (int i=0;i< allSituations.Count; i++)
+        for (int i = 0; i < allSituations.Count; i++)
         {
             int value = Random.Range(0, allSituations.Count);
             while (situationOrder.Contains(value))
@@ -65,8 +64,19 @@ public class SituationManager : MonoBehaviour {
 
             situationOrder.Add(value);
         }
-    }
 
+    }
+ 
+    public void RandomizeSituationOrder()
+    {
+        for (int i = situationOrder.Count - 1; i > 0; i--)
+        {
+            int r = Random.Range(0, i + 1);
+            int tmp = situationOrder[i];
+            situationOrder[i] = situationOrder[r];
+            situationOrder[r] = tmp;
+        }
+    }
     // Update is called once per frame
     void Update () {
 		
@@ -119,7 +129,10 @@ public class SituationManager : MonoBehaviour {
                 StartCoroutine("TransitionTextOff");
                 currentSituationIndex++;
                 currentSituationIndex = currentSituationIndex % situations.Count;
-
+                if(Random.Range(0,2)==0)
+                {
+                    RandomizeSituationOrder();
+                }
                 //list of a list, selects random element (which is a list) in larger list, then random element in the selected list
                 int randomSituation = situationOrder[situationOrderCurrentIndex];
 
@@ -137,7 +150,7 @@ public class SituationManager : MonoBehaviour {
     IEnumerator TransitionLightColor()
     {
         bool leftCoolSide=false;
-        if(Random.Range(0,2)==0)
+        if(Random.Range(0,13)==0)
         {
             leftCoolSide = true;
         }

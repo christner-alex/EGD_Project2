@@ -32,7 +32,7 @@ public class CanScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
-		if (col.gameObject.name == "can") {
+		if (col.gameObject.name == "can"||col.gameObject.name.Contains("Trash")) {
 			return;
 		}else if (col.gameObject.name == "lid") {
 			aud.clip = yeah;
@@ -46,7 +46,7 @@ public class CanScript : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider col){
-		if (col.gameObject.name != "lid") {
+		if (col.gameObject.name != "lid"&&!col.gameObject.name.Contains("can") && !col.gameObject.name.Contains("Trash")) {
 			int i = Random.Range (0, sad.Length);
 			aud.clip = sad [i];
 			aud.Play ();

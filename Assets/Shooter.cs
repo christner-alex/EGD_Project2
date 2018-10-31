@@ -30,6 +30,7 @@ public class Shooter : MonoBehaviour {
             g.transform.parent = transform;
             //g.AddComponent<Rigidbody>();  
             g.GetComponent<Rigidbody>().velocity = (hit.point - g.transform.position).normalized * launchSpeed;
+            g.transform.localScale *= Random.Range(.55f,1.35f);
             coolDown = 0;
         }
         else
